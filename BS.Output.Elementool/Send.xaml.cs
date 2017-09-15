@@ -17,6 +17,7 @@ namespace BS.Output.Elementool
       IssueNumberTextBox.Text = lastIssueNumber.ToString();
       FileNameTextBox.Text = fileName;
 
+      CommentTextBox.TextChanged += ValidateData;
       IssueNumberTextBox.TextChanged += ValidateData;
       FileNameTextBox.TextChanged += ValidateData;
       ValidateData(null, null);
