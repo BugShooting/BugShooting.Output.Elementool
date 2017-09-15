@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://www.elementool.com/WebServices/BugTracking.asmx?wsdl" docRef="http://www.elementool.com/WebServices/BugTracking.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://www.elementool.com/WebServices/BugTracking.asmx" xmlns:q1="http://www.elementool.com/WebServices/BugTracking" binding="q1:BugTrackingSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://www.elementool.com/WebServices/BugTracking.asmx" xmlns:q2="http://www.elementool.com/WebServices/BugTracking" binding="q2:BugTrackingSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>
