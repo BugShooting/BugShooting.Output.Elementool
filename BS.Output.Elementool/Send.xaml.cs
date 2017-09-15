@@ -8,11 +8,11 @@ namespace BS.Output.Elementool
   partial class Send : Window
   {
  
-    public Send(string url, int lastIssueNumber, string fileName)
+    public Send(string accountName, int lastIssueNumber, string fileName)
     {
       InitializeComponent();
-        
-      Url.Text = url;
+
+      AccountName.Text = accountName;
       NewIssue.IsChecked = true;
       IssueNumberTextBox.Text = lastIssueNumber.ToString();
       FileNameTextBox.Text = fileName;
@@ -33,9 +33,9 @@ namespace BS.Output.Elementool
       get { return CommentTextBox.Text; }
     }
 
-    public string IssueNumber
+    public int IssueNumber
     {
-      get { return IssueNumberTextBox.Text; }
+      get { return Convert.ToInt32(IssueNumberTextBox.Text); }
     }
 
     public string FileName

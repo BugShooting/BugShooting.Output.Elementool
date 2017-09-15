@@ -1,9 +1,10 @@
-﻿using System;
+﻿using BS.Output.Elementool.Elementool.BugTracking;
+using System;
 using System.Drawing;
-using System.Windows.Forms;
+using System.IO;
 using System.ServiceModel;
-using System.Web;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BS.Output.Elementool
 {
@@ -45,7 +46,7 @@ namespace BS.Output.Elementool
                                  "Screenshot",
                                  String.Empty, 
                                  true,
-                                 "1");
+                                 1);
 
       return EditOutput(Owner, output);
 
@@ -89,7 +90,7 @@ namespace BS.Output.Elementool
       outputValues.Add(new OutputValue("OpenItemInBrowser", Convert.ToString(Output.OpenItemInBrowser)));
       outputValues.Add(new OutputValue("FileName", Output.FileName));
       outputValues.Add(new OutputValue("FileFormat", Output.FileFormat));
-      outputValues.Add(new OutputValue("LastIssueNumber", Output.LastIssueNumber));
+      outputValues.Add(new OutputValue("LastIssueNumber", Output.LastIssueNumber.ToString()));
 
       return outputValues;
       
@@ -105,7 +106,7 @@ namespace BS.Output.Elementool
                         OutputValues["FileName", "Screenshot"].Value, 
                         OutputValues["FileFormat", ""].Value,
                         Convert.ToBoolean(OutputValues["OpenItemInBrowser", Convert.ToString(true)].Value),
-                        OutputValues["LastIssueNumber", "1"].Value);
+                        Convert.ToInt32(OutputValues["LastIssueNumber", "1"].Value));
 
     }
 
@@ -115,9 +116,123 @@ namespace BS.Output.Elementool
       try
       {
 
-        // TODO
-        return null;
+        string url = "http://www.elementool.com";
         
+        BugTracking elementoolClient = new BugTracking();
+        elementoolClient.Url = String.Format("{0}/WebServices/BugTracking.asmx", url);
+    
+        string userName = Output.UserName;
+        string password = Output.Password;
+        bool showLogin = string.IsNullOrEmpty(userName) || string.IsNullOrEmpty(password);
+        bool rememberCredentials = false;
+
+        string fileName = V3.FileHelper.GetFileName(Output.FileName, Output.FileFormat, ImageData);
+
+        while (true)
+        {
+
+          if (showLogin)
+          {
+
+            // Show credentials window
+            Credentials credentials = new Credentials(Output.AccountName, userName, password, rememberCredentials);
+
+            var credentialsOwnerHelper = new System.Windows.Interop.WindowInteropHelper(credentials);
+            credentialsOwnerHelper.Owner = Owner.Handle;
+
+            if (credentials.ShowDialog() != true)
+            {
+              return new V3.SendResult(V3.Result.Canceled);
+            }
+
+            userName = credentials.UserName;
+            password = credentials.Password;
+            rememberCredentials = credentials.Remember;
+
+          }
+
+          try
+          {
+          
+            Microsoft.Web.Services2.Security.Tokens.UsernameToken objUsernameToken = new Microsoft.Web.Services2.Security.Tokens.UsernameToken(String.Format("{0}\\{1}", Output.AccountName, userName), password, Microsoft.Web.Services2.Security.Tokens.PasswordOption.SendHashed);
+            
+            elementoolClient.RequestSoapContext.Security.Tokens.Clear();
+            elementoolClient.RequestSoapContext.Security.Tokens.Add(objUsernameToken);
+
+            elementoolClient.RequestSoapContext.Security.Elements.Clear();
+            elementoolClient.RequestSoapContext.Security.Elements.Add(new Microsoft.Web.Services2.Security.MessageSignature(objUsernameToken));
+
+            await Task.Factory.StartNew(() => elementoolClient.LoginCheck());
+
+          }
+          catch
+          {
+            showLogin = true;
+            continue;
+          }
+
+
+          // Show send window
+          Send send = new Send(Output.AccountName, Output.LastIssueNumber, fileName);
+
+          var sendOwnerHelper = new System.Windows.Interop.WindowInteropHelper(send);
+          sendOwnerHelper.Owner = Owner.Handle;
+
+          if (!send.ShowDialog() == true)
+          {
+            return new V3.SendResult(V3.Result.Canceled);
+          }
+
+          int issueNumber;
+          
+          if (send.CreateNewIssue)
+          {
+            BugTrackingIssue issue = await Task.Factory.StartNew(() => elementoolClient.GetNewIssue());
+            issue.FieldsArray[0].Value = send.Comment;
+            issue = await Task.Factory.StartNew(() => elementoolClient.SaveIssue(issue));
+            issueNumber = issue.IssueNumber;
+          }
+          else
+          {
+            issueNumber = send.IssueNumber;
+          }
+
+          string fullFileName = String.Format("{0}.{1}", send.FileName, V3.FileHelper.GetFileExtention(Output.FileFormat));
+          byte[] fileBytes = V3.FileHelper.GetFileBytes(Output.FileFormat, ImageData);
+          
+          AddAttachmentResult addAttachmentResult;
+          using (MemoryStream fileStream = new MemoryStream(fileBytes))
+          {
+            Microsoft.Web.Services2.Attachments.Attachment attachment = new Microsoft.Web.Services2.Attachments.Attachment("none", fileStream);
+            elementoolClient.RequestSoapContext.Attachments.Add(attachment);
+            addAttachmentResult = await Task.Factory.StartNew(() => elementoolClient.AddAttachment(issueNumber, fullFileName));
+          }
+
+          if (addAttachmentResult != AddAttachmentResult.OK)
+          {
+            return new V3.SendResult(V3.Result.Failed, addAttachmentResult.ToString());
+          }
+
+
+          // Open issue in browser
+          if (Output.OpenItemInBrowser)
+          {
+            V3.WebHelper.OpenUrl(String.Format("{0}/Services/Common/quickview.aspx?usrname={1}&accntname={2}&issueno={3}", url, userName, Output.AccountName, issueNumber));
+          }
+
+
+          return new V3.SendResult(V3.Result.Success,
+                                    new Output(Output.Name,
+                                              Output.AccountName,
+                                              (rememberCredentials) ? userName : Output.UserName,
+                                              (rememberCredentials) ? password : Output.Password,
+                                              Output.FileName,
+                                              Output.FileFormat,
+                                              Output.OpenItemInBrowser,
+                                              issueNumber));
+
+        }
+
       }
       catch (Exception ex)
       {
@@ -125,6 +240,6 @@ namespace BS.Output.Elementool
       }
 
     }
-      
+
   }
 }

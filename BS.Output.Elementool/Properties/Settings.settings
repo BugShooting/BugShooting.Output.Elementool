@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BS.Output.Elementool.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="BS_Output_Elementool_Elementool_BugTracking_BugTracking" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://www.elementool.com/WebServices/BugTracking.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

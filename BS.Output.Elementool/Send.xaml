@@ -13,7 +13,7 @@
         SizeToContent="Height">
 
   <StackPanel Grid.IsSharedSizeScope="True" Margin="4">
-    <TextBlock x:Name="Url" Margin="4" TextWrapping="Wrap" />
+    <TextBlock x:Name="AccountName" Margin="4" TextWrapping="Wrap" />
     <Separator Margin="4" />
     <RadioButton x:Name="NewIssue" Content="New issue" Margin="4" Checked="NewIssue_CheckedChanged" Unchecked="NewIssue_CheckedChanged" />
     <RadioButton x:Name="AttachToIssue" Content="Attach to issue" Margin="4" />
@@ -23,7 +23,7 @@
         <ColumnDefinition Width="*"/>
       </Grid.ColumnDefinitions>
       <Label Grid.Column="0">Comment</Label>
-      <TextBox x:Name="CommentTextBox" Grid.Column="1" VerticalContentAlignment="Center" local:Validation.Required="True" />
+      <TextBox x:Name="CommentTextBox" Grid.Column="1" VerticalContentAlignment="Center" MaxLines="5" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" local:Validation.Required="True" />
     </Grid>
     <Grid x:Name="IssueNumberControls" Margin="4">
       <Grid.ColumnDefinitions>

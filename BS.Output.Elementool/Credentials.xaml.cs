@@ -6,11 +6,11 @@ namespace BS.Output.Elementool
   partial class Credentials : Window
   {
 
-    public Credentials(string url, string userName, string password, bool remember)
+    public Credentials(string accountName, string userName, string password, bool remember)
     {
       InitializeComponent();
 
-      Url.Text = url;
+      AccountName.Text = accountName;
       UserNameTextBox.Text = userName;
       PasswordBox.Password = password;
       RememberCheckBox.IsChecked = remember;

@@ -11,7 +11,7 @@
     string fileName;
     string fileFormat;
     bool openItemInBrowser;
-    string lastIssueNumber;
+    int lastIssueNumber;
 
     public Output(string name, 
                   string accountName, 
@@ -19,8 +19,8 @@
                   string password, 
                   string fileName, 
                   string fileFormat,
-                  bool openItemInBrowser, 
-                  string lastIssueNumber)
+                  bool openItemInBrowser,
+                  int lastIssueNumber)
     {
       this.name = name;
       this.accountName = accountName;
@@ -72,7 +72,7 @@
       get { return openItemInBrowser; }
     }
     
-    public string LastIssueNumber
+    public int LastIssueNumber
     {
       get { return lastIssueNumber; }
     }
