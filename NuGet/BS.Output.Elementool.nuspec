@@ -17,5 +17,6 @@
     </metadata>
     <files>
 			<file src="BS.Output.Elementool.dll" />
+      <file src="Microsoft.Web.Services2.dll" />
     </files>
 </package>
