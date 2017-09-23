@@ -37,7 +37,7 @@
     </Reference>
     <Reference Include="Microsoft.Web.Services2, Version=2.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>.\Microsoft.Web.Services2.dll</HintPath>
+      <HintPath>..\Lib\Microsoft.Web.Services2.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -161,11 +161,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Web References\Elementool.BugTracking\BugTracking.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Microsoft.Web.Services2.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
