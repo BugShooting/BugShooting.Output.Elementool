@@ -93,7 +93,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <None Include="Connected Services\Elementool.BugTracking\Arrays.xsd">
       <SubType>Designer</SubType>
     </None>
