@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://ElementoolWcfService" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ElementoolWcfService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://ElementoolWcfService/Imports">
+      <xsd:import schemaLocation="" namespace="http://ElementoolWcfService" />
+      <xsd:import schemaLocation="" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="" namespace="http://schemas.datacontract.org/2004/07/ElementoolWcfService" />
+      <xsd:import schemaLocation="" namespace="http://schemas.datacontract.org/2004/07/" />
+      <xsd:import schemaLocation="" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="" />
+      <xsd:import schemaLocation="" namespace="http://schemas.datacontract.org/2004/07/ElementoolWcfService.Core" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IBugTrackingService_GetNewIssue_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewIssue" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_GetNewIssue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewIssueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_GetIssueByNum_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIssueByNum" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_GetIssueByNum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIssueByNumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_SaveIssue_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveIssue" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_SaveIssue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveIssueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_ExecuteQuickReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteQuickReport" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_ExecuteQuickReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteQuickReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_GetIssueHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIssueHistory" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_GetIssueHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIssueHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_GetIssueRemarks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIssueRemarks" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_GetIssueRemarks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIssueRemarksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_GetIssueAttachments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIssueAttachments" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_GetIssueAttachments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIssueAttachmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_GetIssueAttachmentsInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIssueAttachmentsInfo" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_GetIssueAttachmentsInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIssueAttachmentsInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_DownloadAttachment_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadAttachment" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_DownloadAttachment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadAttachmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_DeleteAttachment_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAttachment" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_DeleteAttachment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAttachmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_AddAttachment_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAttachment" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_AddAttachment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAttachmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_GetMaxAttachmentSize_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaxAttachmentSize" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_GetMaxAttachmentSize_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaxAttachmentSizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_GetWelcomeReports_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWelcomeReports" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_GetWelcomeReports_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWelcomeReportsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_GetDBBackup_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDBBackup" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_GetDBBackup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDBBackupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_ExecuteWelcomeReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWelcomeReport" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_ExecuteWelcomeReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWelcomeReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_GetCustomReportQueryFields_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomReportQueryFields" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_GetCustomReportQueryFields_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomReportQueryFieldsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_ExecuteCustomReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteCustomReport" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_ExecuteCustomReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteCustomReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_GetQuickReportsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuickReportsList" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_GetQuickReportsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuickReportsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_GetDateFormat_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDateFormat" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_GetDateFormat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDateFormatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_GetAccountsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountsList" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_GetAccountsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_GetLinkedIssues_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLinkedIssues" />
+  </wsdl:message>
+  <wsdl:message name="IBugTrackingService_GetLinkedIssues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLinkedIssuesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IBugTrackingService">
+    <wsdl:operation name="GetNewIssue">
+      <wsdl:input wsaw:Action="http://ElementoolWcfService/IBugTrackingService/GetNewIssue" message="tns:IBugTrackingService_GetNewIssue_InputMessage" />
+      <wsdl:output wsaw:Action="http://ElementoolWcfService/IBugTrackingService/GetNewIssueResponse" message="tns:IBugTrackingService_GetNewIssue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIssueByNum">
+      <wsdl:input wsaw:Action="http://ElementoolWcfService/IBugTrackingService/GetIssueByNum" message="tns:IBugTrackingService_GetIssueByNum_InputMessage" />
+      <wsdl:output wsaw:Action="http://ElementoolWcfService/IBugTrackingService/GetIssueByNumResponse" message="tns:IBugTrackingService_GetIssueByNum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveIssue">
+      <wsdl:input wsaw:Action="http://ElementoolWcfService/IBugTrackingService/SaveIssue" message="tns:IBugTrackingService_SaveIssue_InputMessage" />
+      <wsdl:output wsaw:Action="http://ElementoolWcfService/IBugTrackingService/SaveIssueResponse" message="tns:IBugTrackingService_SaveIssue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteQuickReport">
+      <wsdl:input wsaw:Action="http://ElementoolWcfService/IBugTrackingService/ExecuteQuickReport" message="tns:IBugTrackingService_ExecuteQuickReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://ElementoolWcfService/IBugTrackingService/ExecuteQuickReportResponse" message="tns:IBugTrackingService_ExecuteQuickReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIssueHistory">
+      <wsdl:input wsaw:Action="http://ElementoolWcfService/IBugTrackingService/GetIssueHistory" message="tns:IBugTrackingService_GetIssueHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://ElementoolWcfService/IBugTrackingService/GetIssueHistoryResponse" message="tns:IBugTrackingService_GetIssueHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIssueRemarks">
+      <wsdl:input wsaw:Action="http://ElementoolWcfService/IBugTrackingService/GetIssueRemarks" message="tns:IBugTrackingService_GetIssueRemarks_InputMessage" />
+      <wsdl:output wsaw:Action="http://ElementoolWcfService/IBugTrackingService/GetIssueRemarksResponse" message="tns:IBugTrackingService_GetIssueRemarks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIssueAttachments">
+      <wsdl:input wsaw:Action="http://ElementoolWcfService/IBugTrackingService/GetIssueAttachments" message="tns:IBugTrackingService_GetIssueAttachments_InputMessage" />
+      <wsdl:output wsaw:Action="http://ElementoolWcfService/IBugTrackingService/GetIssueAttachmentsResponse" message="tns:IBugTrackingService_GetIssueAttachments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIssueAttachmentsInfo">
+      <wsdl:input wsaw:Action="http://ElementoolWcfService/IBugTrackingService/GetIssueAttachmentsInfo" message="tns:IBugTrackingService_GetIssueAttachmentsInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://ElementoolWcfService/IBugTrackingService/GetIssueAttachmentsInfoResponse" message="tns:IBugTrackingService_GetIssueAttachmentsInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadAttachment">
+      <wsdl:input wsaw:Action="http://ElementoolWcfService/IBugTrackingService/DownloadAttachment" message="tns:IBugTrackingService_DownloadAttachment_InputMessage" />
+      <wsdl:output wsaw:Action="http://ElementoolWcfService/IBugTrackingService/DownloadAttachmentResponse" message="tns:IBugTrackingService_DownloadAttachment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAttachment">
+      <wsdl:input wsaw:Action="http://ElementoolWcfService/IBugTrackingService/DeleteAttachment" message="tns:IBugTrackingService_DeleteAttachment_InputMessage" />
+      <wsdl:output wsaw:Action="http://ElementoolWcfService/IBugTrackingService/DeleteAttachmentResponse" message="tns:IBugTrackingService_DeleteAttachment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAttachment">
+      <wsdl:input wsaw:Action="http://ElementoolWcfService/IBugTrackingService/AddAttachment" message="tns:IBugTrackingService_AddAttachment_InputMessage" />
+      <wsdl:output wsaw:Action="http://ElementoolWcfService/IBugTrackingService/AddAttachmentResponse" message="tns:IBugTrackingService_AddAttachment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxAttachmentSize">
+      <wsdl:input wsaw:Action="http://ElementoolWcfService/IBugTrackingService/GetMaxAttachmentSize" message="tns:IBugTrackingService_GetMaxAttachmentSize_InputMessage" />
+      <wsdl:output wsaw:Action="http://ElementoolWcfService/IBugTrackingService/GetMaxAttachmentSizeResponse" message="tns:IBugTrackingService_GetMaxAttachmentSize_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWelcomeReports">
+      <wsdl:input wsaw:Action="http://ElementoolWcfService/IBugTrackingService/GetWelcomeReports" message="tns:IBugTrackingService_GetWelcomeReports_InputMessage" />
+      <wsdl:output wsaw:Action="http://ElementoolWcfService/IBugTrackingService/GetWelcomeReportsResponse" message="tns:IBugTrackingService_GetWelcomeReports_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDBBackup">
+      <wsdl:input wsaw:Action="http://ElementoolWcfService/IBugTrackingService/GetDBBackup" message="tns:IBugTrackingService_GetDBBackup_InputMessage" />
+      <wsdl:output wsaw:Action="http://ElementoolWcfService/IBugTrackingService/GetDBBackupResponse" message="tns:IBugTrackingService_GetDBBackup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWelcomeReport">
+      <wsdl:input wsaw:Action="http://ElementoolWcfService/IBugTrackingService/ExecuteWelcomeReport" message="tns:IBugTrackingService_ExecuteWelcomeReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://ElementoolWcfService/IBugTrackingService/ExecuteWelcomeReportResponse" message="tns:IBugTrackingService_ExecuteWelcomeReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomReportQueryFields">
+      <wsdl:input wsaw:Action="http://ElementoolWcfService/IBugTrackingService/GetCustomReportQueryFields" message="tns:IBugTrackingService_GetCustomReportQueryFields_InputMessage" />
+      <wsdl:output wsaw:Action="http://ElementoolWcfService/IBugTrackingService/GetCustomReportQueryFieldsResponse" message="tns:IBugTrackingService_GetCustomReportQueryFields_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteCustomReport">
+      <wsdl:input wsaw:Action="http://ElementoolWcfService/IBugTrackingService/ExecuteCustomReport" message="tns:IBugTrackingService_ExecuteCustomReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://ElementoolWcfService/IBugTrackingService/ExecuteCustomReportResponse" message="tns:IBugTrackingService_ExecuteCustomReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuickReportsList">
+      <wsdl:input wsaw:Action="http://ElementoolWcfService/IBugTrackingService/GetQuickReportsList" message="tns:IBugTrackingService_GetQuickReportsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://ElementoolWcfService/IBugTrackingService/GetQuickReportsListResponse" message="tns:IBugTrackingService_GetQuickReportsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDateFormat">
+      <wsdl:input wsaw:Action="http://ElementoolWcfService/IBugTrackingService/GetDateFormat" message="tns:IBugTrackingService_GetDateFormat_InputMessage" />
+      <wsdl:output wsaw:Action="http://ElementoolWcfService/IBugTrackingService/GetDateFormatResponse" message="tns:IBugTrackingService_GetDateFormat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountsList">
+      <wsdl:input wsaw:Action="http://ElementoolWcfService/IBugTrackingService/GetAccountsList" message="tns:IBugTrackingService_GetAccountsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://ElementoolWcfService/IBugTrackingService/GetAccountsListResponse" message="tns:IBugTrackingService_GetAccountsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkedIssues">
+      <wsdl:input wsaw:Action="http://ElementoolWcfService/IBugTrackingService/GetLinkedIssues" message="tns:IBugTrackingService_GetLinkedIssues_InputMessage" />
+      <wsdl:output wsaw:Action="http://ElementoolWcfService/IBugTrackingService/GetLinkedIssuesResponse" message="tns:IBugTrackingService_GetLinkedIssues_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

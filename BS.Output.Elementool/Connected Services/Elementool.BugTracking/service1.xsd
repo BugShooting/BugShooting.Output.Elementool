@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="IssueFieldType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Text" />
+      <xs:enumeration value="Checkbox" />
+      <xs:enumeration value="Dropdown" />
+      <xs:enumeration value="Listbox" />
+      <xs:enumeration value="Date" />
+      <xs:enumeration value="Reminder" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="IssueFieldType" nillable="true" type="tns:IssueFieldType" />
+  <xs:simpleType name="AddAttachmentResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OK" />
+      <xs:enumeration value="AccessDenied" />
+      <xs:enumeration value="InvalidIssueNumber" />
+      <xs:enumeration value="SizeTooBig" />
+      <xs:enumeration value="NoFileRecieved" />
+      <xs:enumeration value="MoreThanOneFileRecieved" />
+      <xs:enumeration value="InvalidExtension" />
+      <xs:enumeration value="SaveFileError" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AddAttachmentResult" nillable="true" type="tns:AddAttachmentResult" />
+</xs:schema>

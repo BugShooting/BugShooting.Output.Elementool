@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.12
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{F6580491-A788-4604-9B10-31AE99C6A1A3}"
 	ProjectSection(SolutionItems) = preProject
@@ -15,11 +15,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BS.Output.Elementool", "BS.Output.Elementool\BS.Output.Elementool.csproj", "{72AE9E3B-42E3-444C-B460-F17A2CD6AD14}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{A789A1F6-45F6-4B51-87F5-A574B6DFECA1}"
-	ProjectSection(SolutionItems) = preProject
-		Lib\Microsoft.Web.Services2.dll = Lib\Microsoft.Web.Services2.dll
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

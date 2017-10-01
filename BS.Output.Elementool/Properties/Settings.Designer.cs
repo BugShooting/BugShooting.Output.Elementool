@@ -22,15 +22,5 @@ namespace BS.Output.Elementool.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://www.elementool.com/WebServices/BugTracking.asmx")]
-        public string BS_Output_Elementool_Elementool_BugTracking_BugTracking {
-            get {
-                return ((string)(this["BS_Output_Elementool_Elementool_BugTracking_BugTracking"]));
-            }
-        }
     }
 }

@@ -35,16 +35,13 @@
       <HintPath>O:\Bin\BS.Output.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Microsoft.Web.Services2, Version=2.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\Microsoft.Web.Services2.dll</HintPath>
-    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.IdentityModel" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
@@ -60,6 +57,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\Elementool.BugTracking\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Credentials.xaml.cs">
       <DependentUpon>Credentials.xaml</DependentUpon>
     </Compile>
@@ -83,11 +85,6 @@
       <DependentUpon>Send.xaml</DependentUpon>
     </Compile>
     <Compile Include="Validation.cs" />
-    <Compile Include="Web References\Elementool.BugTracking\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -96,35 +93,60 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Connected Services\Elementool.BugTracking\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Elementool.BugTracking\BS.Output.Elementool.Elementool.BugTracking.AddAttachmentResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Elementool.BugTracking\BS.Output.Elementool.Elementool.BugTracking.BugTrackingIssue.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Elementool.BugTracking\BS.Output.Elementool.Elementool.BugTracking.DownloadAttachmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Elementool.BugTracking\BS.Output.Elementool.Elementool.BugTracking.ExecuteCustomReportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Elementool.BugTracking\BS.Output.Elementool.Elementool.BugTracking.ExecuteWelcomeReportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Elementool.BugTracking\BS.Output.Elementool.Elementool.BugTracking.IssueAttachment.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Elementool.BugTracking\BS.Output.Elementool.Elementool.BugTracking.IssueField.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Elementool.BugTracking\BS.Output.Elementool.Elementool.BugTracking.QuickReport.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Elementool.BugTracking\ElementoolWcfService.Core.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Elementool.BugTracking\ElementoolWcfService.wsdl" />
+    <None Include="Connected Services\Elementool.BugTracking\ElementoolWcfService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Elementool.BugTracking\ElementoolWcfService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Elementool.BugTracking\service.wsdl" />
+    <None Include="Connected Services\Elementool.BugTracking\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Elementool.BugTracking\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Elementool.BugTracking\service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Resources\logo_64.png" />
-    <None Include="Web References\Elementool.BugTracking\AddAttachmentResult.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\Elementool.BugTracking\BugTracking.wsdl" />
-    <None Include="Web References\Elementool.BugTracking\BugTrackingIssue.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\Elementool.BugTracking\DeleteAttachmentResult.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\Elementool.BugTracking\IssueAttachment.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\Elementool.BugTracking\IssueField.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\Elementool.BugTracking\QuickReport.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\Elementool.BugTracking\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo_16.png" />
@@ -144,23 +166,22 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <WebReferences Include="Web References\" />
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://www.elementool.com/WebServices/BugTracking.asmx">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\Elementool.BugTracking\</RelPath>
-      <UpdateFromURL>http://www.elementool.com/WebServices/BugTracking.asmx</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>BS_Output_Elementool_Elementool_BugTracking_BugTracking</CachedSettingsPropName>
-    </WebReferenceUrl>
+    <WCFMetadataStorage Include="Connected Services\Elementool.BugTracking\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Web References\Elementool.BugTracking\BugTracking.disco" />
+    <None Include="Connected Services\Elementool.BugTracking\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Elementool.BugTracking\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Elementool.BugTracking\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

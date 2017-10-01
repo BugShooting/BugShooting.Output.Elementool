@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/ElementoolWcfService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ElementoolWcfService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="" namespace="http://schemas.datacontract.org/2004/07/" />
+  <xs:import schemaLocation="" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="BugTrackingIssue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FieldsArray" nillable="true" type="tns:ArrayOfIssueField" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IssueNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="SubmittedOn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubmittedOnDateTime" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BugTrackingIssue" nillable="true" type="tns:BugTrackingIssue" />
+  <xs:complexType name="ArrayOfIssueField">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IssueField" nillable="true" type="tns:IssueField" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIssueField" nillable="true" type="tns:ArrayOfIssueField" />
+  <xs:complexType name="IssueField">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CanNotify" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Caption" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsRequired" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Layout" nillable="true" type="tns:IssueField.FieldLayout" />
+      <xs:element minOccurs="0" name="SendNotification" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SystemName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ValueList" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="exclude" type="xs:boolean" />
+      <xs:element minOccurs="0" name="positionX" type="xs:int" />
+      <xs:element minOccurs="0" name="positionY" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IssueField" nillable="true" type="tns:IssueField" />
+  <xs:complexType name="IssueField.FieldLayout">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="FieldType" type="q2:IssueFieldType" />
+      <xs:element minOccurs="0" name="LinesNum" type="xs:int" />
+      <xs:element minOccurs="0" name="Position" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IssueField.FieldLayout" nillable="true" type="tns:IssueField.FieldLayout" />
+  <xs:complexType name="ArrayOfIssueAttachment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IssueAttachment" nillable="true" type="tns:IssueAttachment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIssueAttachment" nillable="true" type="tns:ArrayOfIssueAttachment" />
+  <xs:complexType name="IssueAttachment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="ser:guid" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IssueAttachment" nillable="true" type="tns:IssueAttachment" />
+</xs:schema>
