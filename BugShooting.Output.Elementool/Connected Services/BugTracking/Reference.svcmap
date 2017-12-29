@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b533462e-ae1b-49b0-9fb3-76f215f616c4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://www.elementool.com/ElementoolWcfService/BugTracking/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ElementoolWcfService.wsdl" MetadataType="Wsdl" ID="865bb6ee-9d9e-4574-9226-c438143468f7" SourceId="1" SourceUrl="http://www.elementool.com/ElementoolWcfService/BugTracking/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="9fe477f1-0d41-4796-8951-4b1e73c8967d" SourceId="1" SourceUrl="http://www.elementool.com/ElementoolWcfService/BugTracking/mex" />
+    <MetadataFile FileName="ElementoolWcfService.xsd" MetadataType="Schema" ID="ea27137c-8c2b-4a27-8f78-0571bcb1dbf9" SourceId="1" SourceUrl="http://www.elementool.com/ElementoolWcfService/BugTracking/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="7d0a0893-c7cd-47c0-82c2-e408bb1c90ca" SourceId="1" SourceUrl="http://www.elementool.com/ElementoolWcfService/BugTracking/mex" />
+    <MetadataFile FileName="ElementoolWcfService1.xsd" MetadataType="Schema" ID="fc389559-664f-4bf1-ac0d-9d851c45b536" SourceId="1" SourceUrl="http://www.elementool.com/ElementoolWcfService/BugTracking/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="0b04dcfc-7957-4d6b-916a-7509429304d1" SourceId="1" SourceUrl="http://www.elementool.com/ElementoolWcfService/BugTracking/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="14d44d1d-1646-4740-a38f-2cd1c3fc6e8c" SourceId="1" SourceUrl="http://www.elementool.com/ElementoolWcfService/BugTracking/mex" />
+    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="e9ab82a2-03e2-487b-b855-d376d9728b8a" SourceId="1" SourceUrl="http://www.elementool.com/ElementoolWcfService/BugTracking/mex" />
+    <MetadataFile FileName="ElementoolWcfService.Core.xsd" MetadataType="Schema" ID="a369e257-1456-4736-b6dd-32252495f194" SourceId="1" SourceUrl="http://www.elementool.com/ElementoolWcfService/BugTracking/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
