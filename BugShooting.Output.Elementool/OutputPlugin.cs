@@ -195,7 +195,7 @@ namespace BugShooting.Output.Elementool
               issueNumber = send.IssueNumber;
             }
 
-            string fullFileName = String.Format("{0}.{1}", send.FileName, FileHelper.GetFileExtention(Output.FileFormat));
+            string fullFileName = String.Format("{0}.{1}", send.FileName, FileHelper.GetFileExtension(Output.FileFormat));
             byte[] fileBytes = FileHelper.GetFileBytes(Output.FileFormat, ImageData);
           
             AddAttachmentResult addAttachmentResult = await elementoolClient.AddAttachmentAsync(issueNumber, fullFileName, fileBytes);
