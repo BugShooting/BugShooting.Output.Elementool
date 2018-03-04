@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using BS.Plugin.V3.Output;
 using BS.Plugin.V3.Common;
 using BS.Plugin.V3.Utilities;
+using System.Linq;
 
 namespace BugShooting.Output.Elementool
 {
@@ -47,7 +48,7 @@ namespace BugShooting.Output.Elementool
                                  String.Empty, 
                                  String.Empty, 
                                  "Screenshot",
-                                 String.Empty, 
+                                 FileHelper.GetFileFormats().First().ID,
                                  true,
                                  1);
 
@@ -70,7 +71,7 @@ namespace BugShooting.Output.Elementool
                           edit.UserName,
                           edit.Password,
                           edit.FileName,
-                          edit.FileFormat,
+                          edit.FileFormatID,
                           edit.OpenItemInBrowser,
                           Output.LastIssueNumber);
       }
@@ -92,7 +93,7 @@ namespace BugShooting.Output.Elementool
       outputValues.Add("Password",Output.Password, true);
       outputValues.Add("OpenItemInBrowser", Convert.ToString(Output.OpenItemInBrowser));
       outputValues.Add("FileName", Output.FileName);
-      outputValues.Add("FileFormat", Output.FileFormat);
+      outputValues.Add("FileFormatID", Output.FileFormatID.ToString());
       outputValues.Add("LastIssueNumber", Output.LastIssueNumber.ToString());
 
       return outputValues;
@@ -106,8 +107,8 @@ namespace BugShooting.Output.Elementool
                         OutputValues["AccountName", ""], 
                         OutputValues["UserName", ""],
                         OutputValues["Password", ""], 
-                        OutputValues["FileName", "Screenshot"], 
-                        OutputValues["FileFormat", ""],
+                        OutputValues["FileName", "Screenshot"],
+                        new Guid(OutputValues["FileFormatID", ""]),
                         Convert.ToBoolean(OutputValues["OpenItemInBrowser", Convert.ToString(true)]),
                         Convert.ToInt32(OutputValues["LastIssueNumber", "1"]));
 
@@ -195,8 +196,10 @@ namespace BugShooting.Output.Elementool
               issueNumber = send.IssueNumber;
             }
 
-            string fullFileName = String.Format("{0}.{1}", send.FileName, FileHelper.GetFileExtension(Output.FileFormat));
-            byte[] fileBytes = FileHelper.GetFileBytes(Output.FileFormat, ImageData);
+            IFileFormat fileFormat = FileHelper.GetFileFormat(Output.FileFormatID);
+
+            string fullFileName = String.Format("{0}.{1}", send.FileName, fileFormat.FileExtension);
+            byte[] fileBytes = FileHelper.GetFileBytes(Output.FileFormatID, ImageData);
           
             AddAttachmentResult addAttachmentResult = await elementoolClient.AddAttachmentAsync(issueNumber, fullFileName, fileBytes);
             if (addAttachmentResult != AddAttachmentResult.OK)
@@ -218,7 +221,7 @@ namespace BugShooting.Output.Elementool
                                              (rememberCredentials) ? userName : Output.UserName,
                                              (rememberCredentials) ? password : Output.Password,
                                              Output.FileName,
-                                             Output.FileFormat,
+                                             Output.FileFormatID,
                                              Output.OpenItemInBrowser,
                                              issueNumber));
 

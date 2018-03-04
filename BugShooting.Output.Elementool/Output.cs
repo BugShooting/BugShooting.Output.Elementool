@@ -1,4 +1,5 @@
 ﻿using BS.Plugin.V3.Output;
+using System;
 
 namespace BugShooting.Output.Elementool
 {
@@ -11,7 +12,7 @@ namespace BugShooting.Output.Elementool
     string userName;
     string password;
     string fileName;
-    string fileFormat;
+    Guid fileFormatID;
     bool openItemInBrowser;
     int lastIssueNumber;
 
@@ -19,8 +20,8 @@ namespace BugShooting.Output.Elementool
                   string accountName, 
                   string userName,
                   string password, 
-                  string fileName, 
-                  string fileFormat,
+                  string fileName,
+                  Guid fileFormatID,
                   bool openItemInBrowser,
                   int lastIssueNumber)
     {
@@ -29,7 +30,7 @@ namespace BugShooting.Output.Elementool
       this.userName = userName;
       this.password = password;
       this.fileName = fileName;
-      this.fileFormat = fileFormat;
+      this.fileFormatID = fileFormatID;
       this.openItemInBrowser = openItemInBrowser;
       this.lastIssueNumber = lastIssueNumber;
     }
@@ -64,9 +65,9 @@ namespace BugShooting.Output.Elementool
       get { return fileName; }
     }
 
-    public string FileFormat
+    public Guid FileFormatID
     {
-      get { return fileFormat; }
+      get { return fileFormatID; }
     }
 
     public bool OpenItemInBrowser
